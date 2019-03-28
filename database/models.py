@@ -1,18 +1,19 @@
 # -*- coding: utf-8 -*-#
 
 #-------------------------------------------------------------------------------
-# Name:         config
+# Name:         models
 # Description:  
 # Author:       henrylee
 # Date:         19-3-28
 #-------------------------------------------------------------------------------
+from bson import ObjectId
+from marshmallow import Schema, fields
 
-# Flask settings
-FLASK_SERVER_NAME = 'localhost:1111'
-FLASK_DEBUG = True
 
-# Flask-Restplus settings
-RESTPLUS_SWAGGR_UI_DOC_EXPANSION = 'list'
-RESTPLUS_VALIDATE = True
-RESTPLUS_MASK_SWAGGER = False
-RESTPLUS_ERROR_404_HELP = False
+Schema.TYPE_MAPPING[ObjectId] = fields.String
+
+
+class ProuctSchema(Schema):
+    user = fields.Int()
+    user_input = fields.Str()
+    output = fields.Str()

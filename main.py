@@ -7,25 +7,46 @@
 # Date:         19-3-28
 #-------------------------------------------------------------------------------
 
-from flask import render_template
-import connexion
+import logging.config
 
-# Create the application instance
-app = connexion.App(__name__, specification_dir='./')
+from os import path
+import logging
+from flask import Flask, Blueprint
 
-# Read the swagger.yml file to configure the endpoints
-app.add_api('swagger.yml')
+import config
 
-# Create a URL route in our application for "/"
-@app.route('/')
-def home():
-    """
-    This function just responds to the brower URL
-    localhost:500/
-    :return:   the rendered template 'home.html'
-    """
-    return render_template('home.html')
+from api.restplus import api
+from api.endpoints.products import ns as casper_products_namespace
+
+
+app = Flask(__name__)
+log_file_path = path.join(path.dirname(path.abspath(__file__)), 'log.config')
+logging.config.fileConfig(log_file_path)
+log = logging.getLogger(__name__)
+
+
+def configure_app(flask_app):
+    flask_app.config['SERVER_NAME'] = config.FLASK_SERVER_NAME
+    flask_app.config['SWAGGR_UI_DOC_EXPANSION'] = config.RESTPLUS_SWAGGR_UI_DOC_EXPANSION
+    flask_app.config['RESTPLUS_VALIDATE'] = config.RESTPLUS_VALIDATE
+    flask_app.config['RESTPLUS_MASK_SWAGGER'] = config.RESTPLUS_MASK_SWAGGER
+    flask_app.config['ERROR_404_HELP'] = config.RESTPLUS_ERROR_404_HELP
+
+
+def initialize_app(flask_app):
+    configure_app(flask_app)
+    blueprint = Blueprint('api', __name__, url_prefix='/api')
+    api.init_app(blueprint)
+    api.add_namespace(casper_products_namespace)
+    flask_app.register_blueprint(blueprint)
+
+
+def main():
+    initialize_app(app)
+    log.info('>>>> Starting development server at ...')
+    app.run(debug=config.FLASK_DEBUG)
+
 
 # If we're runing in stand alone mode, run the application
 if __name__ == '__main__':
-    app.run(host='localhost', port=1111, debug=True)
+    main()
