@@ -20,7 +20,8 @@ from api.endpoints.products import ns as casper_products_namespace
 
 
 app = Flask(__name__)
-log_file_path = path.join(path.dirname(path.abspath(__file__)), 'log.config')
+log_file_path = path.join(path.dirname(path.abspath(__file__)), 'log.conf')
+
 logging.config.fileConfig(log_file_path)
 log = logging.getLogger(__name__)
 
@@ -41,12 +42,12 @@ def initialize_app(flask_app):
     flask_app.register_blueprint(blueprint)
 
 
-def main():
+def main(host, port):
     initialize_app(app)
-    log.info('>>>> Starting development server at ...')
-    app.run(debug=config.FLASK_DEBUG)
+    log.info(f'>>>> Starting development server at {host}:{str(port)}')
+    app.run(debug=config.FLASK_DEBUG, host=host, port=port)
 
 
 # If we're runing in stand alone mode, run the application
 if __name__ == '__main__':
-    main()
+    main("localhost", 1111)

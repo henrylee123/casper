@@ -52,7 +52,7 @@ class ProductCollection(Resource):
 
 
 @ns.route('/<string:id>')
-@api.response(404, 'Product not found')
+@api.response(404, 'Product not found.')
 class ProductItem(Resource):
 
     def get(self,id):
