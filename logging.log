@@ -1,0 +1,277 @@
+2019-03-30 07:02:07,968 - __main__ - INFO - >>>> Starting development server at localhost:1111
+2019-03-30 07:02:07,974 - werkzeug - INFO -  * Running on http://localhost:1111/ (Press CTRL+C to quit)
+2019-03-30 07:02:07,976 - werkzeug - INFO -  * Restarting with stat
+2019-03-30 07:02:08,764 - __main__ - INFO - >>>> Starting development server at localhost:1111
+2019-03-30 07:02:08,770 - werkzeug - WARNING -  * Debugger is active!
+2019-03-30 07:02:08,773 - werkzeug - INFO -  * Debugger PIN: 138-205-202
+2019-03-30 07:02:27,149 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 07:02:27] "[37mGET /api/ HTTP/1.1[0m" 200 -
+2019-03-30 07:02:27,329 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 07:02:27] "[37mGET /api/swagger.json HTTP/1.1[0m" 200 -
+2019-03-30 07:02:27,332 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 07:02:27] "[37mGET /swaggerui/favicon-32x32.png HTTP/1.1[0m" 200 -
+2019-03-30 07:02:34,466 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 07:02:34] "[37mGET /api/swagger.json HTTP/1.1[0m" 200 -
+2019-03-30 07:02:45,764 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 07:02:45] "[37mGET /api/swagger.json HTTP/1.1[0m" 200 -
+2019-03-30 07:03:12,111 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 07:03:12] "[37mGET /api/products/ HTTP/1.1[0m" 200 -
+2019-03-30 07:03:23,410 - flask.app - ERROR - Exception on /api/products/haha [GET]
+Traceback (most recent call last):
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 325, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask_restplus/resource.py", line 44, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/henrylee/PycharmProjects/casper/api/endpoints/products.py", line 62, in get
+    product = db.products.find_one({'_id': ObjectId(id)})
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 125, in __init__
+    self.__validate(oid)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 221, in __validate
+    _raise_invalid_id(oid)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 67, in _raise_invalid_id
+    " or a 24-character hex string" % oid)
+bson.errors.InvalidId: 'haha' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string
+2019-03-30 07:03:23,467 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 07:03:23] "[1m[35mGET /api/products/haha HTTP/1.1[0m" 500 -
+2019-03-30 11:24:16,271 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 11:24:16] "[37mPOST /api/products/ HTTP/1.1[0m" 201 -
+2019-03-30 11:24:26,599 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 11:24:26] "[37mGET /api/products/ HTTP/1.1[0m" 200 -
+2019-03-30 11:24:39,685 - flask.app - ERROR - Exception on /api/products/qwer [GET]
+Traceback (most recent call last):
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 325, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask_restplus/resource.py", line 44, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/henrylee/PycharmProjects/casper/api/endpoints/products.py", line 62, in get
+    product = db.products.find_one({'_id': ObjectId(id)})
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 125, in __init__
+    self.__validate(oid)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 221, in __validate
+    _raise_invalid_id(oid)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 67, in _raise_invalid_id
+    " or a 24-character hex string" % oid)
+bson.errors.InvalidId: 'qwer' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string
+2019-03-30 11:24:39,686 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 11:24:39] "[1m[35mGET /api/products/qwer HTTP/1.1[0m" 500 -
+2019-03-30 11:24:53,119 - flask.app - ERROR - Exception on /api/products/111 [GET]
+Traceback (most recent call last):
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 325, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask_restplus/resource.py", line 44, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/henrylee/PycharmProjects/casper/api/endpoints/products.py", line 62, in get
+    product = db.products.find_one({'_id': ObjectId(id)})
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 125, in __init__
+    self.__validate(oid)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 221, in __validate
+    _raise_invalid_id(oid)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 67, in _raise_invalid_id
+    " or a 24-character hex string" % oid)
+bson.errors.InvalidId: '111' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string
+2019-03-30 11:24:53,120 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 11:24:53] "[1m[35mGET /api/products/111 HTTP/1.1[0m" 500 -
+2019-03-30 11:25:14,401 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 11:25:14] "[37mGET /api/products/ HTTP/1.1[0m" 200 -
+2019-03-30 11:25:15,297 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 11:25:15] "[37mGET /api/products/ HTTP/1.1[0m" 200 -
+2019-03-30 11:25:51,384 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 11:25:51] "[33mGET /api/products/111%2Fqwer HTTP/1.1[0m" 404 -
+2019-03-30 11:27:46,331 - flask.app - ERROR - Exception on /api/products/111 [GET]
+Traceback (most recent call last):
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 325, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask_restplus/resource.py", line 44, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/henrylee/PycharmProjects/casper/api/endpoints/products.py", line 62, in get
+    product = db.products.find_one({'_id': ObjectId(id)})
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 125, in __init__
+    self.__validate(oid)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 221, in __validate
+    _raise_invalid_id(oid)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 67, in _raise_invalid_id
+    " or a 24-character hex string" % oid)
+bson.errors.InvalidId: '111' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string
+2019-03-30 11:27:46,332 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 11:27:46] "[1m[35mGET /api/products/111 HTTP/1.1[0m" 500 -
+2019-03-30 11:27:52,700 - flask.app - ERROR - Exception on /api/products/qwer [GET]
+Traceback (most recent call last):
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 325, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask_restplus/resource.py", line 44, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/henrylee/PycharmProjects/casper/api/endpoints/products.py", line 62, in get
+    product = db.products.find_one({'_id': ObjectId(id)})
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 125, in __init__
+    self.__validate(oid)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 221, in __validate
+    _raise_invalid_id(oid)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 67, in _raise_invalid_id
+    " or a 24-character hex string" % oid)
+bson.errors.InvalidId: 'qwer' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string
+2019-03-30 11:27:52,701 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 11:27:52] "[1m[35mGET /api/products/qwer HTTP/1.1[0m" 500 -
+2019-03-30 11:28:10,595 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 11:28:10] "[37mGET /api/products/ HTTP/1.1[0m" 200 -
+2019-03-30 11:28:16,758 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 11:28:16] "[33mGET /api/111 HTTP/1.1[0m" 404 -
+2019-03-30 11:28:53,903 - flask.app - ERROR - Exception on /api/products/111 [GET]
+Traceback (most recent call last):
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 325, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask_restplus/resource.py", line 44, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/henrylee/PycharmProjects/casper/api/endpoints/products.py", line 62, in get
+    product = db.products.find_one({'_id': ObjectId(id)})
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 125, in __init__
+    self.__validate(oid)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 221, in __validate
+    _raise_invalid_id(oid)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 67, in _raise_invalid_id
+    " or a 24-character hex string" % oid)
+bson.errors.InvalidId: '111' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string
+2019-03-30 11:28:54,906 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 11:28:54] "[1m[35mGET /api/products/111 HTTP/1.1[0m" 500 -
+2019-03-30 11:29:00,980 - flask.app - ERROR - Exception on /api/products/111 [GET]
+Traceback (most recent call last):
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 325, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask_restplus/resource.py", line 44, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/henrylee/PycharmProjects/casper/api/endpoints/products.py", line 62, in get
+    product = db.products.find_one({'_id': ObjectId(id)})
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 125, in __init__
+    self.__validate(oid)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 221, in __validate
+    _raise_invalid_id(oid)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 67, in _raise_invalid_id
+    " or a 24-character hex string" % oid)
+bson.errors.InvalidId: '111' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string
+2019-03-30 11:29:00,986 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 11:29:00] "[1m[35mGET /api/products/111 HTTP/1.1[0m" 500 -
+2019-03-30 12:00:35,252 - __main__ - INFO - >>>> Starting development server at localhost:1111
+2019-03-30 12:00:35,258 - werkzeug - INFO -  * Running on http://localhost:1111/ (Press CTRL+C to quit)
+2019-03-30 12:00:35,259 - werkzeug - INFO -  * Restarting with stat
+2019-03-30 12:00:36,034 - __main__ - INFO - >>>> Starting development server at localhost:1111
+2019-03-30 12:00:36,040 - werkzeug - WARNING -  * Debugger is active!
+2019-03-30 12:00:36,044 - werkzeug - INFO -  * Debugger PIN: 114-731-757
+2019-03-30 12:02:19,897 - flask.app - ERROR - Exception on /api/products/1 [GET]
+Traceback (most recent call last):
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 325, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask_restplus/resource.py", line 44, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/henrylee/PycharmProjects/casper/api/endpoints/products.py", line 62, in get
+    product = db.products.find_one({'_id': ObjectId(id)})
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 125, in __init__
+    self.__validate(oid)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 221, in __validate
+    _raise_invalid_id(oid)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 67, in _raise_invalid_id
+    " or a 24-character hex string" % oid)
+bson.errors.InvalidId: '1' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string
+2019-03-30 12:02:19,900 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 12:02:19] "[1m[35mGET /api/products/1 HTTP/1.1[0m" 500 -
+2019-03-30 12:02:26,469 - flask.app - ERROR - Exception on /api/products/0 [GET]
+Traceback (most recent call last):
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 325, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask_restplus/resource.py", line 44, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/henrylee/PycharmProjects/casper/api/endpoints/products.py", line 62, in get
+    product = db.products.find_one({'_id': ObjectId(id)})
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 125, in __init__
+    self.__validate(oid)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 221, in __validate
+    _raise_invalid_id(oid)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 67, in _raise_invalid_id
+    " or a 24-character hex string" % oid)
+bson.errors.InvalidId: '0' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string
+2019-03-30 12:02:26,471 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 12:02:26] "[1m[35mGET /api/products/0 HTTP/1.1[0m" 500 -
+2019-03-30 12:18:27,570 - werkzeug - INFO -  * Detected change in '/home/henrylee/PycharmProjects/casper/api/endpoints/products.py', reloading
+2019-03-30 12:18:27,997 - werkzeug - INFO -  * Restarting with stat
+2019-03-30 12:18:28,835 - __main__ - INFO - >>>> Starting development server at localhost:1111
+2019-03-30 12:18:28,841 - werkzeug - WARNING -  * Debugger is active!
+2019-03-30 12:18:28,845 - werkzeug - INFO -  * Debugger PIN: 292-479-602
+2019-03-30 12:20:58,039 - __main__ - INFO - >>>> Starting development server at localhost:1111
+2019-03-30 12:20:58,045 - werkzeug - INFO -  * Running on http://localhost:1111/ (Press CTRL+C to quit)
+2019-03-30 12:20:58,046 - werkzeug - INFO -  * Restarting with stat
+2019-03-30 12:20:58,876 - __main__ - INFO - >>>> Starting development server at localhost:1111
+2019-03-30 12:20:58,883 - werkzeug - WARNING -  * Debugger is active!
+2019-03-30 12:20:58,887 - werkzeug - INFO -  * Debugger PIN: 986-130-661
+2019-03-30 12:23:35,605 - flask.app - ERROR - Exception on /api/products/1 [GET]
+Traceback (most recent call last):
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 325, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/flask_restplus/resource.py", line 44, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/henrylee/PycharmProjects/casper/api/endpoints/products.py", line 62, in get
+    product = db.products.find_one({'_id': ObjectId(id)})
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 125, in __init__
+    self.__validate(oid)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 221, in __validate
+    _raise_invalid_id(oid)
+  File "/home/henrylee/anaconda3/lib/python3.7/site-packages/bson/objectid.py", line 67, in _raise_invalid_id
+    " or a 24-character hex string" % oid)
+bson.errors.InvalidId: '1' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string
+2019-03-30 12:23:35,621 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 12:23:35] "[37mGET /api/products/000000000000000000000001 HTTP/1.1[0m" 200 -
+2019-03-30 12:23:35,626 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 12:23:35] "[1m[35mGET /api/products/1 HTTP/1.1[0m" 500 -
+2019-03-30 12:23:38,164 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2019 12:23:38] "[37mGET /api/products/000000000000000000000001 HTTP/1.1[0m" 200 -
+2019-04-05 16:25:22,179 - __main__ - INFO - >>>> Starting development server at localhost:1111
+2019-04-05 16:25:22,226 - werkzeug - INFO -  * Running on http://localhost:1111/ (Press CTRL+C to quit)
+2019-04-05 16:25:22,227 - werkzeug - INFO -  * Restarting with stat
+2019-04-05 16:25:22,497 - __main__ - INFO - >>>> Starting development server at localhost:1111
+2019-04-05 16:25:22,501 - werkzeug - WARNING -  * Debugger is active!
+2019-04-05 16:25:22,519 - werkzeug - INFO -  * Debugger PIN: 120-199-158
+2019-04-05 16:25:38,918 - werkzeug - INFO - 127.0.0.1 - - [05/Apr/2019 16:25:38] "[37mGET /api/ HTTP/1.1[0m" 200 -
+2019-04-05 16:25:38,964 - werkzeug - INFO - 127.0.0.1 - - [05/Apr/2019 16:25:38] "[37mGET /swaggerui/swagger-ui-bundle.js HTTP/1.1[0m" 200 -
+2019-04-05 16:25:38,993 - werkzeug - INFO - 127.0.0.1 - - [05/Apr/2019 16:25:38] "[37mGET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1[0m" 200 -
+2019-04-05 16:25:38,995 - werkzeug - INFO - 127.0.0.1 - - [05/Apr/2019 16:25:38] "[37mGET /swaggerui/swagger-ui.css HTTP/1.1[0m" 200 -
+2019-04-05 16:25:39,044 - werkzeug - INFO - 127.0.0.1 - - [05/Apr/2019 16:25:39] "[36mGET /swaggerui/droid-sans.css HTTP/1.1[0m" 304 -
+2019-04-05 16:25:39,461 - werkzeug - INFO - 127.0.0.1 - - [05/Apr/2019 16:25:39] "[37mGET /api/swagger.json HTTP/1.1[0m" 200 -
+2019-04-05 16:25:39,504 - werkzeug - INFO - 127.0.0.1 - - [05/Apr/2019 16:25:39] "[37mGET /swaggerui/favicon-32x32.png HTTP/1.1[0m" 200 -
+2019-04-05 16:48:03,458 - __main__ - INFO - >>>> Starting development server at localhost:1111
+2019-04-05 16:48:03,463 - werkzeug - INFO -  * Running on http://localhost:1111/ (Press CTRL+C to quit)
+2019-04-05 16:48:03,463 - werkzeug - INFO -  * Restarting with stat
+2019-04-05 16:48:03,713 - __main__ - INFO - >>>> Starting development server at localhost:1111
+2019-04-05 16:48:03,717 - werkzeug - WARNING -  * Debugger is active!
+2019-04-05 16:48:03,720 - werkzeug - INFO -  * Debugger PIN: 239-290-937
